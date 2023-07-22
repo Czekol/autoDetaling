@@ -1,0 +1,335 @@
+@use 'colors' as color;
+
+body {
+	display: flex;
+	flex-direction: column;
+	background-color: color.$black1;
+	font-size: 1.6rem;
+	font-family: 'Hind Madurai', sans-serif;
+}
+
+.wrapper {
+	padding: 0 2rem;
+	margin-inline: auto;
+	max-width: 1200px;
+	width: 100%;
+}
+
+.header {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	background-image: url('../../dist/img/640bmwmatigray.png');
+	background-size: cover;
+	background-position: bottom center;
+	z-index: 10;
+
+	&__hero-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: -1;
+	}
+
+	&__heading {
+		padding-top: 27vh;
+		color: color.$white1;
+		font-size: 2.5rem;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		color: color.$white1;
+		font-size: 1.4rem;
+		margin-top: 1rem;
+		margin-bottom: 4rem;
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 225px;
+		height: 50px;
+		background-color: #000;
+		color: #fff;
+		font-size: 1.4rem;
+		font-weight: 700;
+		border-radius: 50px;
+		text-transform: uppercase;
+		z-index: 1;
+		overflow: hidden;
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+			transition: left 0.9s;
+			z-index: -1;
+		}
+
+		&::before {
+			top: -70px;
+			left: -220px;
+			height: 200px;
+			width: 200px;
+			background-image: linear-gradient(-90deg, rgba(23, 23, 23, 0.3), rgba(255, 255, 255, 0));
+			transform: rotate(30deg);
+		}
+
+		&:hover:before {
+			left: 97%;
+		}
+	}
+
+	&__scroll-down {
+		position: absolute;
+		bottom: 4rem;
+		left: 50%;
+		padding: 1rem 2rem;
+		color: color.$white1;
+		font-size: 3.5rem;
+		translate: -50% 0;
+		animation: bounce-top 2.2s both infinite;
+		cursor: pointer;
+	}
+}
+
+.section {
+	padding: 10rem 2rem 0;
+}
+
+.section-heading {
+	margin-bottom: 4rem;
+	color: color.$white1;
+	text-align: center;
+	font-size: 2.9rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.services {
+	&__box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 2.7rem 2rem;
+		height: 450px;
+		background-image: url('../../dist/img/sports-car-1349150_640.jpg');
+		background-position: center;
+		background-size: cover;
+		filter: grayscale(100%);
+		border-radius: 10px;
+		overflow: hidden;
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			z-index: -4;
+		}
+
+		&--outside-img {
+			margin-top: 2rem;
+			background-image: url('../../dist/img/bmw-m4-2970890_640.jpg');
+			background-position: 30%;
+		}
+
+		&-heading {
+			color: color.$white2;
+			font-size: 1.6rem;
+			font-weight: 400;
+			text-transform: uppercase;
+			&--highlighted {
+				color: color.$black1;
+				font-weight: 700;
+			}
+
+			&--right {
+				text-align: right;
+			}
+		}
+
+		&-check {
+			text-align: center;
+			align-self: center;
+			&-text {
+				color: color.$white2;
+				font-size: 1.6rem;
+				font-weight: 700;
+			}
+			&-icon {
+				margin-top: 0.6rem;
+				color: color.$white2;
+				font-size: 1.6rem;
+				rotate: 180deg;
+				animation: mover 1s infinite alternate;
+			}
+		}
+	}
+}
+
+.section#how-to-order {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.ordering {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5rem 0;
+	height: 900px;
+	background-color: color.$black3;
+	&__box {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 2.5rem;
+		width: 275px;
+		height: 200px;
+		background-color: color.$white2;
+		color: color.$black3;
+		border-radius: 10px;
+		&:nth-child(2) {
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 5px;
+				height: 100px;
+				background-color: color.$white2;
+			}
+
+			&::before {
+				top: -100px;
+			}
+
+			&::after {
+				bottom: -100px;
+			}
+		}
+
+		&-circle {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 75px;
+			width: 75px;
+			font-size: 3rem;
+			border: 3px solid color.$black3;
+			border-radius: 100%;
+			&::before {
+				content: attr(data-content);
+			}
+		}
+
+		&-text {
+			width: min-content;
+			font-size: 2.1rem;
+			text-transform: uppercase;
+			text-align: right;
+			&-bolded {
+				font-size: 2.4rem;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.realization {
+	margin-bottom: 10rem;
+	&.section {
+		padding-inline: 0;
+	}
+	&__box {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(13, 300px);
+		gap: 10px;
+		&-img {
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+			border-radius: 8px;
+			object-fit: cover;
+
+		
+		}
+	}
+}
+
+#lightbox {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: none;
+}
+
+#lightbox.active {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#lightbox img {
+	max-width: 90%;
+	max-height: 80%;
+	padding: 4px;
+	background-color: black;
+	border: 2px solid white;
+}
+
+.info-pakiets {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	color: color.$white1;
+	font-size: 1.7rem;
+	text-align: center;
+	text-transform: uppercase;
+	&-link {
+		position: relative;
+		color: color.$gray1;
+		font-weight: 600;
+		transition: color 0.3s;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 0;
+			width: 100%;
+			background-color: color.$gray1;
+			z-index: -1;
+			transition: background-color 0.3s, height 0.3s;
+		}
+
+		&:hover::after {
+			height: 100%;
+		}
+
+		&:hover {
+			color: color.$black1;
+		}
+	}
+}

@@ -1,0 +1,97 @@
+@use '../colors' as color;
+
+@media (width >= 375px) {
+	.header {
+		&__heading {
+			font-size: 3rem;
+		}
+
+		&__scroll-down {
+			bottom: 6.5rem;
+			font-size: 4rem;
+		}
+	}
+
+	.services {
+		&__box {
+			&-heading {
+				font-size: 2rem;
+				white-space: pre;
+			}
+			&-check {
+				&-text {
+					font-size: 2rem;
+				}
+				&-icon {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+
+	.outside-cleaning {
+		&__box {
+			&-img {
+			height: 260px;
+			}
+		}
+	}
+}
+
+@media (width >= 576px) {
+	.header {
+		&__text {
+			width: 75%;
+		}
+	}
+
+	.services {
+		&__box {
+			height: 500px;
+			width: 75vw;
+			margin-inline: auto;
+
+			&--outside-img {
+				margin-top: 12.5vw;
+			}
+		}
+	}
+
+	.footer {
+		&__domain-name {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			display: block;
+			color: color.$white2;
+			font-size: 2rem;
+			font-weight: 700;
+			font-family: 'Lora', serif;
+		}
+
+		&__box-social {
+			&::before {
+				left: 0;
+			}
+			a {
+				justify-content: flex-start;
+				margin-left: 1.6rem;
+				&:nth-child(2) {
+					margin: 3.3rem 0rem 3.3rem 1.6rem;
+				}
+			}
+		}
+	}
+
+	.contact {
+		.form-container {
+			padding: 3.5rem 3rem;
+		}
+	}
+
+	.inside-cleaning {
+		&__box {
+			margin-bottom: 5rem;
+		}
+	}
+}

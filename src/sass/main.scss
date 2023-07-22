@@ -1,0 +1,14 @@
+@use 'colors' as color;
+@use 'reset';
+@use 'animations';
+@use 'hamburger';
+@use 'nav';
+@use 'style';
+@use 'footer';
+@use './pages/insideCleaning';
+@use './pages/outsideCleaning';
+@use './pages/pakiets';
+@use './pages/contact';
+@use '../sass/rwd/small';
+@use '../sass/rwd/medium';
+@use '../sass/rwd/large'; 
