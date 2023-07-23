@@ -32,7 +32,7 @@
 	.outside-cleaning {
 		&__box {
 			&-img {
-			height: 260px;
+				height: 260px;
 			}
 		}
 	}
@@ -92,6 +92,41 @@
 	.inside-cleaning {
 		&__box {
 			margin-bottom: 5rem;
+		}
+	}
+
+	.realization {
+		&__box {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(8, 300px);
+			gap: 10px;
+			&-img {
+		
+
+				&--1 {
+					grid-column: span 2;
+					grid-row: span 1;
+				}
+
+				&--4 {
+					grid-column: span 2;
+					grid-row: span 1;
+				}
+
+				&--1,
+				&--4 {
+					&.desktop {
+						display: inline-block;
+					}
+				}
+				&--1,
+				&--4 {
+					&.mobile {
+						display: none;
+					}
+				}
+			}
 		}
 	}
 }

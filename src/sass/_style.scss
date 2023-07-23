@@ -261,7 +261,7 @@ body {
 	&__box {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
-		grid-template-rows: repeat(13, 300px);
+		grid-template-rows: repeat(15, 300px);
 		gap: 10px;
 		&-img {
 			width: 100%;
@@ -270,7 +270,20 @@ body {
 			border-radius: 8px;
 			object-fit: cover;
 
-		
+			&--1 {
+				grid-row: span 2;
+			}
+
+			&--4 {
+				grid-row: span 2;
+			}
+
+			&--1,
+			&--4 {
+				&.desktop {
+					display: none;
+				}
+			}
 		}
 	}
 }
