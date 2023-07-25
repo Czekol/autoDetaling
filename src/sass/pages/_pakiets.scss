@@ -19,6 +19,7 @@
 
 		&--inside {
 			box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.3);
+			margin-bottom: 6rem;
 		}
 
 		.price {
@@ -83,7 +84,8 @@
 			}
 
 			&.car-paint {
-				background-image: url('../../../dist/img/woskowanie.jpg');
+				background-image: url('../../../dist/img/car-rims.jpg');
+
 			}
 			&.car-rims {
 				background-image: url('../../../dist/img/car-rims.jpg');
@@ -95,7 +97,7 @@
 				background-image: url('../../../dist/img/pedzelkowanierd.jpg');
 			}
 			&.car-headliner {
-				background-image: url('../../../dist/img/pedzelkowanierd.jpg');
+				background-image: url('../../../dist/img/car-headliner.jpg');
 			}
 
 			&__box {

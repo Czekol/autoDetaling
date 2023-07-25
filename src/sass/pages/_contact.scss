@@ -3,7 +3,6 @@
 .contact {
 	.section-heading {
 		margin-top: 14rem;
-		margin-bottom: 2.5rem;
 	}
 
 	.form-container {
@@ -14,6 +13,12 @@
 		.form {
 			display: flex;
 			flex-direction: column;
+
+			&__checkbox {
+				margin: .8rem 1rem 1.7rem 0;
+				width: 16px;
+				height: 16px;
+			}
 
 			&__input,
 			&__textarea {
@@ -43,14 +48,13 @@
 			}
 
 			&__label {
-				margin-left: 0.5rem;
-				color: color.$white2;
+				color: color.$white1;
 				&.error {
 					color: color.$error;
 				}
 				&-link {
 					position: relative;
-					color: color.$gray3;
+					color: color.$gray2;
 					transition: color 0.3s;
 					z-index: 3;
 
@@ -61,7 +65,7 @@
 						left: 0;
 						height: 0;
 						width: 100%;
-						background-color: color.$gray3;
+						background-color: color.$gray2;
 						z-index: -1;
 						transition: background-color 0.3s, height 0.3s;
 					}
@@ -78,7 +82,7 @@
 
 			&__btn {
 				position: relative;
-				margin-top: 1.5rem;
+				margin-top: .5rem;
 				padding: 1.6rem;
 				background-color: color.$black2;
 				color: color.$white2;

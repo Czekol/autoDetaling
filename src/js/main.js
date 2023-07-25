@@ -41,10 +41,13 @@ const copyText = async () => {
 
 function isElementInViewport(el) {
 	let rect = el.getBoundingClientRect();
+	let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+	let margin = 620;
+
 	return (
-		rect.top >= 0 &&
+		rect.top >= -margin &&
 		rect.left >= 0 &&
-		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		rect.bottom <= viewportHeight + margin &&
 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 	);
 }
@@ -105,13 +108,14 @@ function dropdownSlides() {
 		});
 	}
 }
-// if (accordionBtns[0].parentElement.nextElementSibling || accordionBtns[2].parentElement.nextElementSibling) {
-// 		if (window.innerWidth >= 768) {
-// 			accordionBtns[2].parentElement.nextElementSibling.classList.add('active');
-// 		} else {
-// 			accordionBtns[0].parentElement.nextElementSibling.classList.add('active');
-// 		}
-// }
+
+if (document.body.classList.contains('insideCleaningSubpage')) {
+	if (window.innerWidth >= 768) {
+		accordionBtns[2].parentElement.nextElementSibling.classList.add('active');
+	} else {
+		accordionBtns[0].parentElement.nextElementSibling.classList.add('active');
+	}
+}
 
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';

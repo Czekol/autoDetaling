@@ -25,12 +25,21 @@
 			filter: grayscale(100%);
 		}
 
+		&-license {
+			position: absolute;
+			left: 10px;
+			top: 190px;
+			z-index: 4;
+			font-size: 1.1rem;
+			color: color.$white1;
+			&-link {
+				color: color.$gray1;
+				text-decoration: underline;
+			}
+		}
+
 		&-offer {
 			position: relative;
-			// display: flex;
-			// flex-direction: column;
-			// justify-content: center;
-			// align-items: center;
 			z-index: 3;
 			padding: 3rem 2rem;
 			height: 182px;

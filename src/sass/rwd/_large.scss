@@ -17,7 +17,7 @@
 	}
 
 	.header {
-		background-image: url('../../../dist/img/1080bmwmatigray.png');
+		background-image: url('../../../dist/img/newBmwMati1280.jpg');
 
 		&__heading {
 			padding-top: 28vh;
@@ -156,13 +156,13 @@
 	}
 
 	.realization {
+		margin-bottom: 10rem;
+
 		&__box {
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: repeat(6, 300px);
 
 			&-img {
-		
-
 				&--3 {
 					grid-row: span 2;
 				}
@@ -170,11 +170,6 @@
 				&--9 {
 					grid-row: span 2;
 				}
-				&--10 {
-					grid-row: span 2;
-				}
-
-		
 			}
 		}
 	}
@@ -186,10 +181,10 @@
 	}
 
 	.contact {
-		margin-bottom: 7rem;
+		margin-bottom: 10rem;
 		.section-heading {
-			margin-bottom: 5rem;
-			margin-top: 16rem;
+			// margin-bottom: 5rem;
+			margin-top: 17rem;
 		}
 
 		.form-container {
@@ -223,6 +218,10 @@
 			height: auto;
 			max-width: 1000px;
 			width: 100%;
+
+			&--inside {
+				margin-bottom: 10rem;
+			}
 
 			.price {
 				position: absolute;
