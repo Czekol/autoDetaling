@@ -12,16 +12,11 @@
 		margin-bottom: 2rem;
 		width: min(100%, 345px);
 
-		&:nth-child(1) {
-			position: relative;
-		}
-
 		&-img {
 			width: 100%;
 			height: 215px;
 			border-radius: 10px 10px 0px 0px;
 			object-fit: cover;
-			z-index: 3;
 			filter: grayscale(100%);
 		}
 
@@ -29,7 +24,6 @@
 			position: absolute;
 			left: 10px;
 			top: 190px;
-			z-index: 4;
 			font-size: 1.1rem;
 			color: color.$white1;
 			&-link {
@@ -40,12 +34,12 @@
 
 		&-offer {
 			position: relative;
-			z-index: 3;
 			padding: 3rem 2rem;
 			height: 182px;
 			background-color: color.$white3;
 			color: color.$black3;
 			text-align: center;
+			z-index: 3;
 
 			&::before,
 			&::after {
@@ -56,7 +50,6 @@
 			}
 
 			&::before {
-				z-index: 500;
 				top: 0;
 				left: 0;
 				border-top: 50px solid color.$black3;
@@ -64,7 +57,6 @@
 			}
 
 			&::after {
-				z-index: 500;
 				bottom: 40px;
 				right: 0;
 				border-bottom: 50px solid color.$black3;
@@ -107,7 +99,6 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-inline: auto;
 			width: 273px;
 			width: min(100%, 273px);
 			height: 47px;
@@ -140,7 +131,7 @@
 		border-radius: 0px 0px 10px 10px;
 		box-shadow: 0px 4px 10px 0px rgba(33, 37, 41, 0.2);
 		overflow: hidden;
-		transition: 0.5s ease-in-out;
+		transition: max-height 0.5s ease-in-out;
 		p {
 			margin: 2rem 0;
 		}

@@ -52,6 +52,22 @@ function isElementInViewport(el) {
 	);
 }
 
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+document.body.appendChild(lightbox);
+
+const handleClick = e => {
+	body.classList.add('stop-scrolling');
+
+	lightbox.classList.add('active');
+	const img = document.createElement('img');
+	img.src = e.target.src;
+	while (lightbox.firstChild) {
+		lightbox.removeChild(lightbox.firstChild);
+	}
+	lightbox.appendChild(img);
+};
+
 function lazyLoadImages() {
 	const images = document.querySelectorAll('.realization__box-img[data-src]');
 	images.forEach(function (image) {
@@ -79,9 +95,7 @@ function openAccordionItems() {
 const closeAccordionItems = () => {
 	const allActiveItems = document.querySelectorAll('.both-cleaning__accordion-text');
 	allActiveItems.forEach(item => item.classList.remove('active'));
-
 	allActiveItems.forEach(item => item.classList.remove('active'));
-
 	accordionBtns.forEach(btn => (btn.innerHTML = '<i class="both-cleaning-btn-icon fa-solid  fa-plus"></i>'));
 };
 
@@ -117,21 +131,7 @@ if (document.body.classList.contains('insideCleaningSubpage')) {
 	}
 }
 
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
 
-const handleClick = e => {
-	body.classList.add('stop-scrolling');
-
-	lightbox.classList.add('active');
-	const img = document.createElement('img');
-	img.src = e.target.src;
-	while (lightbox.firstChild) {
-		lightbox.removeChild(lightbox.firstChild);
-	}
-	lightbox.appendChild(img);
-};
 
 hamburgerBtn.addEventListener('click', hamburgerMenu);
 window.addEventListener('scroll', showNumber);
@@ -139,10 +139,10 @@ callIcon.addEventListener('click', showNumber);
 phoneNumber.addEventListener('click', copyText);
 navMobileLinks.forEach(link => link.addEventListener('click', hamburgerMenu));
 window.addEventListener('scroll', lazyLoadImages);
+images.forEach(image => image.addEventListener('click', handleClick));
 accordionBtns.forEach(btn => btn.addEventListener('click', openAccordionItems));
 window.addEventListener('click', clickOutsideAccordion);
 allSlidesCards.forEach(card => card.addEventListener('click', dropdownSlides));
-images.forEach(image => image.addEventListener('click', handleClick));
 lightbox.addEventListener('click', e => {
 	if (e.target !== e.currentTarget) return;
 	lightbox.classList.remove('active');

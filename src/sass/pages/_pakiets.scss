@@ -5,10 +5,10 @@
 
 	.single-pakiet {
 		margin-bottom: 10rem;
+		margin-inline: auto;
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		margin-inline: auto;
 		align-items: center;
 		height: 650px;
 		padding: 1rem;
@@ -32,8 +32,8 @@
 			text-align: center;
 			z-index: 8;
 			&__box {
-				font-size: 1.4rem;
 				margin-bottom: 0.5rem;
+				font-size: 1.4rem;
 				&-discount {
 					text-decoration: line-through;
 				}
@@ -84,7 +84,7 @@
 			}
 
 			&.car-paint {
-				background-image: url('../../../dist/img/car-rims.jpg');
+				background-image: url('../../../dist/img/woskowanie.jpg');
 
 			}
 			&.car-rims {
@@ -130,7 +130,7 @@
 					}
 
 					&-link {
-						color: color.$gray3;
+						color: color.$gray2;
 						font-size: 1.4rem;
 					}
 				}
