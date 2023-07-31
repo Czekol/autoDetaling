@@ -1,6 +1,4 @@
 const hamburgerBtn = document.querySelector('.hamburger');
-const callIcon = document.querySelector('.nav__box-icon');
-const phoneNumber = document.querySelector('.nav__box-call-number');
 const navMobile = document.querySelector('.nav__mobile');
 const navMobileLinks = document.querySelectorAll('.nav__mobile a');
 const body = document.querySelector('body');
@@ -20,6 +18,10 @@ const hamburgerMenu = () => {
 	body.classList.toggle('stop-scrolling');
 };
 
+const navShadow = () => {
+	nav.classList.add('dark-shadow');
+};
+
 const switchPakiet = () => {
 	if (allSlidesCards[0].classList.contains('inside')) {
 		allSlidesCards.forEach(card => card.classList.remove('active'));
@@ -28,10 +30,9 @@ const switchPakiet = () => {
 		insideNumber2.textContent = '4/5';
 		insideNumber3.textContent = '5/5';
 		switchBtn.textContent = 'wnętrze';
-		pakietsRebate.textContent='450-550zł'
-		pakietsRebate.nextElementSibling.textContent='Rabat 27-34%'
-		pakietsRebate.parentElement.nextElementSibling.textContent='400-500zł'
-
+		pakietsRebate.textContent = '450-550zł';
+		pakietsRebate.nextElementSibling.textContent = 'Rabat 27-34%';
+		pakietsRebate.parentElement.nextElementSibling.textContent = '400-500zł';
 	} else {
 		allSlidesCards.forEach(card => card.classList.remove('active'));
 		allSlidesCards[2].classList.add('active');
@@ -39,10 +40,9 @@ const switchPakiet = () => {
 		insideNumber2.textContent = '2/3';
 		insideNumber3.textContent = '3/3';
 		switchBtn.textContent = 'całość';
-		pakietsRebate.textContent='250-450zł'
-		pakietsRebate.nextElementSibling.textContent='Rabat 25-36%'
-		pakietsRebate.parentElement.nextElementSibling.textContent='200-400zł'
-
+		pakietsRebate.textContent = '250-450zł';
+		pakietsRebate.nextElementSibling.textContent = 'Rabat 25-36%';
+		pakietsRebate.parentElement.nextElementSibling.textContent = '200-400zł';
 	}
 	allSlidesCards[0].classList.toggle('inside');
 	allSlidesCards[1].classList.toggle('inside');
@@ -134,6 +134,7 @@ if (document.body.classList.contains('insideCleaningSubpage')) {
 }
 
 hamburgerBtn.addEventListener('click', hamburgerMenu);
+window.addEventListener('scroll', navShadow)
 navMobileLinks.forEach(link => link.addEventListener('click', hamburgerMenu));
 if (switchBtn) {
 	switchBtn.addEventListener('click', switchPakiet);
