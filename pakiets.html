@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/dist/css/main.min.css">
+<link rel="preload" fetchpriority="high" as="image" href="../dist/img/woskowanie.jpg" type="image/jpg">
 <link rel="shortcut icon" href="../dist/img/white-favicon.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
 <link rel="shortcut icon" href="../dist/img/figma-favicon 1.png" type="image/x-icon" media="(prefers-color-scheme: light)">
 
@@ -23,14 +24,12 @@
     <nav class="nav dark-shadow">
     <div class="wrapper">
 
-        <div class="nav__box">
-            <i class="fa-solid fa-phone-volume nav__box-icon"></i>
 
 
-            <div class="nav__box-call">
-                <p class="nav__box-call-number show-number underline">662 520 511</p>
-            </div>
-
+        <div class="nav__logo">
+            <a href="index.html">
+                <img src="../dist/img/Brand Name Logo - Original - resolution.png" alt="Logo Detailing konin">
+            </a>
         </div>
 
         <button class="hamburger hamburger--spring" type="button" aria-label="Hamburger Menu">
@@ -40,19 +39,21 @@
         </button>
 
         <div class="nav__mobile">
-            <a href="index.html">Home</a>
             <a href="index.html#services">Usługi</a>
+            <a href="index.html#pakiets">Pakiety</a>
             <a href="index.html#how-to-order">Jak Zamówić</a>
-            <a href="../pakiets.html">Pakiety</a>
             <a href="../contact.html">Kontakt</a>
+            <a href="tel:662-520-511"><i class="fa-solid fa-mobile-screen"></i> 662-520-511</a>
         </div>
 
         <div class="nav__desktop">
-            <a href="index.html" class="link-animation">Home</a>
             <a href="index.html#services" class="link-animation">Usługi</a>
+            <a href="index.html#pakiets" class="link-animation">Pakiety</a>
             <a href="index.html#how-to-order" class="link-animation">Jak Zamówić</a>
-            <a href="../pakiets.html" class="link-animation">Pakiety</a>
             <a href="../contact.html" class="link-animation">Kontakt</a>
+            <a href="tel:662-520-511"><i class="fa-solid fa-mobile-screen"></i> 662-520-511</a>
+
+
         </div>
 
     </div>
@@ -60,10 +61,9 @@
     <main class="main">
         <section class="pakiets">
             <div class="wrapper">
-                <h2 class="section-heading">full pakiet</h2>
+                <h2 class="section-heading">Pakiety</h2>
                 <div class="single-pakiet">
-
-
+                    <button class="switch">wnętrze</button>
                     <div class="card full-pakiet-card car-paint active">
                         <div class="card__box">
                             <p class="card__box-title">Zabezpieczene Lakieru</p>
@@ -90,7 +90,8 @@
                         <div class="card__box">
                             <p class="card__box-title">Pranie tapicerki</p>
                             <div class="card__box-info">
-                                <p class="card__box-info-text">Pakiet zawiera: pranie tapicerki 3/5</p>
+                                <p class="card__box-info-text">Pakiet zawiera: pranie tapicerki <span
+                                        class="inside-number1">3/5</span></p>
                                 <a href="../insideCleaning.html#about-upholstery" class="card__box-info-link">Dowiedz
                                     się więcej</a>
                             </div>
@@ -101,7 +102,8 @@
                         <div class="card__box">
                             <p class="card__box-title">Czyszczenie kokpitu</p>
                             <div class="card__box-info">
-                                <p class="card__box-info-text">Pakiet zawiera: czyszczenie kokpitu 4/5</p>
+                                <p class="card__box-info-text">Pakiet zawiera: czyszczenie kokpitu <span
+                                        class="inside-number2">4/5</span></p>
                                 <a href="../insideCleaning.html#about-cockpit" class="card__box-info-link">Dowiedz się
                                     więcej</a>
                             </div>
@@ -112,7 +114,8 @@
                         <div class="card__box">
                             <p class="card__box-title">Czyszczenie podsufikti</p>
                             <div class="card__box-info">
-                                <p class="card__box-info-text">Pakiet zawiera: bonetowanie podsufikti 5/5</p>
+                                <p class="card__box-info-text">Pakiet zawiera: bonetowanie podsufikti <span
+                                        class="inside-number3">5/5</span> </p>
                                 <a href="../insideCleaning.html#about-headliner" class="card__box-info-link">Dowiedz się
                                     więcej</a>
                             </div>
@@ -125,54 +128,8 @@
                                 27-34%</span></p>
                         <p class="price__total">400-500zł</p>
                     </div>
-
+                    
                 </div>
-
-                <h2 class="section-heading">Inside pakiet</h2>
-                <div class="single-pakiet single-pakiet--inside">
-
-                    <div class="card card--inside inside-pakiet-card upholstery-washing active">
-                        <div class="card__box">
-                            <p class="card__box-title">Pranie tapicerki</p>
-                            <div class="card__box-info">
-                                <p class="card__box-info-text">Pakiet zawiera: pranie tapicerki 1/3</p>
-                                <a href="../insideCleaning.html#about-upholstery" class="card__box-info-link">Dowiedz
-                                    się więcej</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card card--inside inside-pakiet-card car-cockpit">
-                        <div class="card__box">
-                            <p class="card__box-title">Czyszczenie kokpitu</p>
-                            <div class="card__box-info">
-                                <p class="card__box-info-text">Pakiet zawiera: czyszczenie kokpitu 2/3</p>
-                                <a href="../insideCleaning.html#about-cockpit" class="card__box-info-link">Dowiedz się
-                                    więcej</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card card--inside inside-pakiet-card car-headliner">
-                        <div class="card__box">
-                            <p class="card__box-title">Czyszczenie podsufikti</p>
-                            <div class="card__box-info">
-                                <p class="card__box-info-text">Pakiet zawiera: bonetowanie podsufikti 3/3</p>
-                                <a href="../insideCleaning.html#about-headliner" class="card__box-info-link">Dowiedz się
-                                    więcej</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="price">
-                        <p class="price__box"><span class="price__box-discount">300-350zł</span> <span
-                                class="price__box-rebate">Rabat
-                                29-35%</span></p>
-                        <p class="price__total">250-300zł</p>
-                    </div>
-
-                </div>
-            </div>
         </section>
 
     </main>
@@ -183,7 +140,7 @@
             <a href="index.html">Home</a>
             <a href="index.html#services">Usługi</a>
             <a href="index.html#how-to-order">Jak zamówić</a>
-            <a href="../pakiets.html">Pakiety</a>
+            <a href="index.html#pakiets">Pakiety</a>
             <a href="../contact.html">Kontakt</a>
         </div>
         <p class="footer__domain-name">detailingkonin.pl</p>

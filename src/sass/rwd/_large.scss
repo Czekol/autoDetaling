@@ -30,14 +30,6 @@
 			width: 52%;
 			font-size: 1.8rem;
 		}
-
-		&__btn {
-			font-size: 1.5rem;
-		}
-
-		&__scroll-down {
-			font-size: 5rem;
-		}
 	}
 
 	.section {
@@ -113,7 +105,78 @@
 			}
 		}
 	}
+	.pakiets {
+		.single-pakiet {
+			flex-direction: row;
+			height: auto;
+			max-width: 1000px;
+			width: 100%;
+			margin-bottom: 3rem;
 
+			.switch {
+				top: -50px;
+				width: 150px;
+				height: 50px;
+				border-left: 15px solid color.$black3;
+				border-right: 15px solid color.$black3;
+				border-top: 15px solid color.$black3;
+			}
+			&--inside {
+				margin-bottom: 10rem;
+			}
+
+			.price {
+				position: absolute;
+				left: 50%;
+				bottom: 10%;
+				transform: translateX(-50%);
+				margin-block: 0rem;
+				padding: 2rem;
+				width: auto;
+				&__box {
+					font-size: 1.6rem;
+					margin-bottom: 1rem;
+				}
+				&__total {
+					font-size: 3rem;
+				}
+			}
+
+			.card {
+				width: auto;
+				flex-grow: 0.9;
+				height: 550px;
+
+				&.inside-grow {
+					flex-grow: 0.7165;
+				}
+
+				&.active {
+					flex-grow: 8;
+				}
+
+				&__box {
+					width: 80%;
+
+					&-title {
+						position: static;
+						font-size: 2.2rem;
+						transform: rotate(90deg);
+					}
+
+					&-info {
+						&-text {
+							font-size: 1.8rem;
+						}
+
+						&-link {
+							font-size: 1.6rem;
+						}
+					}
+				}
+			}
+		}
+	}
 	.ordering {
 		flex-direction: row;
 		justify-content: center;
@@ -202,70 +265,6 @@
 		}
 	}
 
-	.pakiets {
-		margin-top: 17rem;
-		.single-pakiet {
-			flex-direction: row;
-			height: auto;
-			max-width: 1000px;
-			width: 100%;
-
-			&--inside {
-				margin-bottom: 10rem;
-			}
-
-			.price {
-				position: absolute;
-				left: 50%;
-				bottom: 10%;
-				transform: translateX(-50%);
-				margin-block: 0rem;
-				padding: 2rem;
-				width: auto;
-				&__box {
-					font-size: 1.6rem;
-					margin-bottom: 1rem;
-				}
-				&__total {
-					font-size: 3rem;
-				}
-			}
-
-			.card {
-				width: auto;
-				flex-grow: 0.9;
-				height: 550px;
-
-				&--inside {
-					flex-grow: 0.7165;
-				}
-
-				&.active {
-					flex-grow: 8;
-				}
-
-				&__box {
-					width: 80%;
-
-					&-title {
-						position: static;
-						font-size: 2.2rem;
-						transform: rotate(90deg);
-					}
-
-					&-info {
-						&-text {
-							font-size: 1.8rem;
-						}
-
-						&-link {
-							font-size: 1.6rem;
-						}
-					}
-				}
-			}
-		}
-	}
 
 	.contact {
 		margin-bottom: 10rem;

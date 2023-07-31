@@ -6,37 +6,47 @@ const navMobileLinks = document.querySelectorAll('.nav__mobile a');
 const body = document.querySelector('body');
 const nav = document.querySelector('.nav');
 const accordionBtns = document.querySelectorAll('.both-cleaning__box-offer-btn');
+const switchBtn = document.querySelector('.switch');
 const allSlidesCards = document.querySelectorAll('.card');
-const fullPakietCards = document.querySelectorAll('.full-pakiet-card');
-const insidePakietCards = document.querySelectorAll('.inside-pakiet-card');
+const insideNumber1 = document.querySelector('.inside-number1');
+const insideNumber2 = document.querySelector('.inside-number2');
+const insideNumber3 = document.querySelector('.inside-number3');
+const pakietsRebate = document.querySelector('.price__box-discount');
 const images = document.querySelectorAll('.realization__box-img');
 
 const hamburgerMenu = () => {
 	hamburgerBtn.classList.toggle('is-active');
 	navMobile.classList.toggle('show-menu');
 	body.classList.toggle('stop-scrolling');
-	callIcon.classList.toggle('black-color');
-	phoneNumber.classList.toggle('black-color');
 };
 
-const showNumber = e => {
-	if (e.target !== callIcon) {
-		phoneNumber.classList.add('show-number');
-		nav.classList.add('dark-shadow');
+const switchPakiet = () => {
+	if (allSlidesCards[0].classList.contains('inside')) {
+		allSlidesCards.forEach(card => card.classList.remove('active'));
+		allSlidesCards[0].classList.add('active');
+		insideNumber1.textContent = '3/5';
+		insideNumber2.textContent = '4/5';
+		insideNumber3.textContent = '5/5';
+		switchBtn.textContent = 'wnętrze';
+		pakietsRebate.textContent='450-550zł'
+		pakietsRebate.nextElementSibling.textContent='Rabat 27-34%'
+		pakietsRebate.parentElement.nextElementSibling.textContent='400-500zł'
+
 	} else {
-		phoneNumber.classList.toggle('show-number');
-	}
-};
+		allSlidesCards.forEach(card => card.classList.remove('active'));
+		allSlidesCards[2].classList.add('active');
+		insideNumber1.textContent = '1/3';
+		insideNumber2.textContent = '2/3';
+		insideNumber3.textContent = '3/3';
+		switchBtn.textContent = 'całość';
+		pakietsRebate.textContent='250-450zł'
+		pakietsRebate.nextElementSibling.textContent='Rabat 25-36%'
+		pakietsRebate.parentElement.nextElementSibling.textContent='200-400zł'
 
-const copyText = async () => {
-	try {
-		await navigator.clipboard.writeText(phoneNumber.textContent);
-		phoneNumber.textContent = 'Skopiowano';
-		phoneNumber.classList.remove('underline');
-		setTimeout(() => (phoneNumber.textContent = '662 520 511'), 3500);
-	} catch (err) {
-		console.error('Failed to copy: ', err);
 	}
+	allSlidesCards[0].classList.toggle('inside');
+	allSlidesCards[1].classList.toggle('inside');
+	allSlidesCards.forEach(card1 => card1.classList.toggle('inside-grow'));
 };
 
 function isElementInViewport(el) {
@@ -110,19 +120,11 @@ const clickOutsideAccordion = e => {
 };
 
 function dropdownSlides() {
-	if (this.classList.contains('inside-pakiet-card')) {
-		insidePakietCards.forEach(card => {
-			card.classList.remove('active');
-			this.classList.add('active');
-		});
-	} else if (this.classList.contains('full-pakiet-card')) {
-		fullPakietCards.forEach(card => {
-			card.classList.remove('active');
-			this.classList.add('active');
-		});
-	}
+	allSlidesCards.forEach(card => {
+		card.classList.remove('active');
+		this.classList.add('active');
+	});
 }
-
 if (document.body.classList.contains('insideCleaningSubpage')) {
 	if (window.innerWidth >= 768) {
 		accordionBtns[2].parentElement.nextElementSibling.classList.add('active');
@@ -131,18 +133,16 @@ if (document.body.classList.contains('insideCleaningSubpage')) {
 	}
 }
 
-
-
 hamburgerBtn.addEventListener('click', hamburgerMenu);
-window.addEventListener('scroll', showNumber);
-callIcon.addEventListener('click', showNumber);
-phoneNumber.addEventListener('click', copyText);
 navMobileLinks.forEach(link => link.addEventListener('click', hamburgerMenu));
+if (switchBtn) {
+	switchBtn.addEventListener('click', switchPakiet);
+}
+allSlidesCards.forEach(card => card.addEventListener('click', dropdownSlides));
 window.addEventListener('scroll', lazyLoadImages);
 images.forEach(image => image.addEventListener('click', handleClick));
 accordionBtns.forEach(btn => btn.addEventListener('click', openAccordionItems));
 window.addEventListener('click', clickOutsideAccordion);
-allSlidesCards.forEach(card => card.addEventListener('click', dropdownSlides));
 lightbox.addEventListener('click', e => {
 	if (e.target !== e.currentTarget) return;
 	lightbox.classList.remove('active');

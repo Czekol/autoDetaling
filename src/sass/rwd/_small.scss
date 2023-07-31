@@ -6,6 +6,10 @@
 			font-size: 3rem;
 		}
 
+		&__btn {
+			padding-block: 1.8rem;
+		}
+
 		&__scroll-down {
 			bottom: 6.5rem;
 			font-size: 4rem;
@@ -78,6 +82,14 @@
 
 				&--1,
 				&--4 {
+					&::before {
+						left: 50%;
+						top: 0;
+						height: 100%;
+						width: 5px;
+						transform: translateX(-50%);
+					}
+
 					&.desktop {
 						display: inline-block;
 					}
