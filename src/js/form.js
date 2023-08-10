@@ -1,10 +1,10 @@
+const form = document.querySelector('.form')
 const username = document.querySelector('#username');
 const number = document.querySelector('#number');
 const email = document.querySelector('#email');
 const message = document.querySelector('#message');
 const checkbox = document.querySelector('#checkbox');
 const sendBtn = document.querySelector('.form__btn');
-const msgStatus = document.querySelector('.msg-status');
 
 const showError = (input, msg) => {
 	input.placeholder = msg;
@@ -56,7 +56,7 @@ const checkCheckbox = checkBox => {
 	}
 };
 
-const checkErrors = () => {
+const checkErrors = (e) => {
 	const allInputs = document.querySelectorAll('.error-item');
 	let errorCount = 0;
 
@@ -67,25 +67,8 @@ const checkErrors = () => {
 	});
 
 	if (errorCount === 0) {
-		if (document.location.search === '?mail_status=sent') {
-			msgStatus.classList.add('success');
-			msgStatus.textContent = 'Wiadomość wysłana!';
-
-			setTimeout(() => {
-				msgStatus.classList.remove('success');
-				location.reload();
-			}, 3000);
-		}
-
-		if (document.location.search === '?mail_status=error') {
-			msgStatus.classList.add('error');
-			msgStatus.textContent = 'Wystąpił błąd.';
-
-			setTimeout(() => {
-				msgStatus.classList.remove('error');
-				location.reload();
-			}, 3000);
-		}
+	
+		form.submit()
 	}
 };
 

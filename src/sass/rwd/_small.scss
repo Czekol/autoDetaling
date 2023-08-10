@@ -90,6 +90,10 @@
 						transform: translateX(-50%);
 					}
 
+					&::after {
+						top: 50%;
+					}
+
 					&.desktop {
 						display: inline-block;
 					}
@@ -106,6 +110,7 @@
 	.footer {
 		&__domain-name {
 			position: absolute;
+			top: 41%;
 			left: 50%;
 			transform: translateX(-50%);
 			display: block;
@@ -122,11 +127,18 @@
 			a {
 				justify-content: flex-start;
 				margin-left: 1.6rem;
+				margin-right: 0;
 				&:nth-child(2) {
 					margin: 3.3rem 0rem 3.3rem 1.6rem;
 				}
 			}
 		}
+
+		&-copyright {
+			top: calc(50% + 13px);
+		}
+
+	
 	}
 
 	.inside-cleaning {

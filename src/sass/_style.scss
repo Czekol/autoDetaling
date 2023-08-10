@@ -11,7 +11,7 @@ body {
 .wrapper {
 	padding: 0 2rem;
 	margin-inline: auto;
-	max-width: 1200px;
+	max-width: 1240px;
 	width: 100%;
 }
 
@@ -220,7 +220,6 @@ body {
 			border-left: 10px solid color.$black3;
 			border-right: 10px solid color.$black3;
 			border-top: 10px solid color.$black3;
-
 			border-radius: 10px 10px 0 0;
 			font-weight: 700;
 			text-transform: uppercase;
@@ -292,8 +291,6 @@ body {
 				transform: translateX(-50%);
 				padding: 2rem;
 				width: calc(100% - 10%);
-				background-color: rgba(0, 0, 0, 0.4);
-				opacity: 0;
 				color: #fff;
 				border-radius: 10px;
 				text-transform: uppercase;
@@ -477,7 +474,22 @@ body {
 					height: 5px;
 					background-color: color.$black3;
 					transform: translatey(-50%);
-					z-index: 55;
+					z-index: 5;
+					pointer-events: none;
+				}
+
+				&::after {
+					content: 'przed i po';
+					position: absolute;
+					left: 50%;
+					top: 44%;
+					transform: translate(-50%, -50%);
+					font-size: 3rem;
+					color: color.$gray1;
+					font-weight: 600;
+					z-index: 6;
+					text-transform: uppercase;
+					pointer-events: none;
 				}
 				&.desktop {
 					display: none;

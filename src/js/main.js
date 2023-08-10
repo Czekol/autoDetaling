@@ -3,7 +3,6 @@ const navMobile = document.querySelector('.nav__mobile');
 const navMobileLinks = document.querySelectorAll('.nav__mobile a');
 const body = document.querySelector('body');
 const nav = document.querySelector('.nav');
-const accordionBtns = document.querySelectorAll('.both-cleaning__box-offer-btn');
 const switchBtn = document.querySelector('.switch');
 const allSlidesCards = document.querySelectorAll('.card');
 const insideNumber1 = document.querySelector('.inside-number1');
@@ -11,6 +10,8 @@ const insideNumber2 = document.querySelector('.inside-number2');
 const insideNumber3 = document.querySelector('.inside-number3');
 const pakietsRebate = document.querySelector('.price__box-discount');
 const images = document.querySelectorAll('.realization__box-img');
+const currentYear = document.querySelector('.footer-copyright-year')
+const accordionBtns = document.querySelectorAll('.both-cleaning__box-offer-btn');
 
 const hamburgerMenu = () => {
 	hamburgerBtn.classList.toggle('is-active');
@@ -30,9 +31,9 @@ const switchPakiet = () => {
 		insideNumber2.textContent = '4/5';
 		insideNumber3.textContent = '5/5';
 		switchBtn.textContent = 'wnętrze';
-		pakietsRebate.textContent = '450-550zł';
-		pakietsRebate.nextElementSibling.textContent = 'Rabat 27-34%';
-		pakietsRebate.parentElement.nextElementSibling.textContent = '400-500zł';
+		pakietsRebate.textContent = '375-600zł';
+		pakietsRebate.nextElementSibling.textContent = 'Rabat 17-20%';
+		pakietsRebate.parentElement.nextElementSibling.textContent = '300-500zł';
 	} else {
 		allSlidesCards.forEach(card => card.classList.remove('active'));
 		allSlidesCards[2].classList.add('active');
@@ -40,14 +41,21 @@ const switchPakiet = () => {
 		insideNumber2.textContent = '2/3';
 		insideNumber3.textContent = '3/3';
 		switchBtn.textContent = 'całość';
-		pakietsRebate.textContent = '250-450zł';
-		pakietsRebate.nextElementSibling.textContent = 'Rabat 25-36%';
-		pakietsRebate.parentElement.nextElementSibling.textContent = '200-400zł';
+		pakietsRebate.textContent = '275-450zł';
+		pakietsRebate.nextElementSibling.textContent = 'Rabat 22-28%';
+		pakietsRebate.parentElement.nextElementSibling.textContent = '200-350zł';
 	}
 	allSlidesCards[0].classList.toggle('inside');
 	allSlidesCards[1].classList.toggle('inside');
 	allSlidesCards.forEach(card1 => card1.classList.toggle('inside-grow'));
 };
+
+function dropdownSlides() {
+	allSlidesCards.forEach(card => {
+		card.classList.remove('active');
+		this.classList.add('active');
+	});
+}
 
 function isElementInViewport(el) {
 	let rect = el.getBoundingClientRect();
@@ -90,6 +98,12 @@ function lazyLoadImages() {
 
 lazyLoadImages();
 
+const handleCurrentYear = () => {
+	const year = new Date().getFullYear()
+	currentYear.textContent = year
+}
+handleCurrentYear()
+
 function openAccordionItems() {
 	if (this.parentElement.nextElementSibling.classList.contains('active')) {
 		this.parentElement.nextElementSibling.classList.remove('active');
@@ -119,12 +133,7 @@ const clickOutsideAccordion = e => {
 	closeAccordionItems();
 };
 
-function dropdownSlides() {
-	allSlidesCards.forEach(card => {
-		card.classList.remove('active');
-		this.classList.add('active');
-	});
-}
+
 if (document.body.classList.contains('insideCleaningSubpage')) {
 	if (window.innerWidth >= 768) {
 		accordionBtns[2].parentElement.nextElementSibling.classList.add('active');
@@ -139,13 +148,13 @@ navMobileLinks.forEach(link => link.addEventListener('click', hamburgerMenu));
 if (switchBtn) {
 	switchBtn.addEventListener('click', switchPakiet);
 }
-allSlidesCards.forEach(card => card.addEventListener('click', dropdownSlides));
 window.addEventListener('scroll', lazyLoadImages);
+allSlidesCards.forEach(card => card.addEventListener('click', dropdownSlides));
 images.forEach(image => image.addEventListener('click', handleClick));
-accordionBtns.forEach(btn => btn.addEventListener('click', openAccordionItems));
-window.addEventListener('click', clickOutsideAccordion);
 lightbox.addEventListener('click', e => {
 	if (e.target !== e.currentTarget) return;
 	lightbox.classList.remove('active');
 	body.classList.remove('stop-scrolling');
 });
+accordionBtns.forEach(btn => btn.addEventListener('click', openAccordionItems));
+window.addEventListener('click', clickOutsideAccordion);

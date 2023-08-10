@@ -265,7 +265,6 @@
 		}
 	}
 
-
 	.contact {
 		margin-bottom: 10rem;
 		.section-heading {
@@ -275,11 +274,13 @@
 		.form-container {
 			padding: 5rem 4rem;
 			width: 50%;
+			border-radius: 10px 0 0 10px;
 		}
 
 		iframe {
 			width: 50%;
 			height: auto;
+			border-radius: 0 10px 10px 0;
 		}
 
 		.wrapper {
